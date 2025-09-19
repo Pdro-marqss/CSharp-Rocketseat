@@ -4,9 +4,10 @@ using MyFirstApi.Communication.Responses;
 
 namespace MyFirstApi.Controllers;
 
-[Route("api/[controller]")] // O atribulo [controller] vai ser sempre o nome dessa classe retirando Controller da frase. No caso (UserController = User)
-[ApiController] //Atributo que define a classe como controller
-public class UserController : ControllerBase
+// Comentei os 2 abaixo porque agora o controller herda (é derivado) de um controller base (um pai). E por isso herda dele essas duas propriedades
+// [Route("api/[controller]")] // O atribulo [controller] vai ser sempre o nome dessa classe retirando Controller da frase. No caso (UserController = User)
+// [ApiController] //Atributo que define a classe como controller
+public class UserController : MyFirstApiBaseController
 {
     [HttpGet] // Indica o metodo HTTP da funcao. No caso é um get
     [Route("{id}")] //Aplica o parametro como parte da rota (path)

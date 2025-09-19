@@ -26,7 +26,7 @@ public class UserController : ControllerBase
             Name = "Pedro Marques",
             Age = 26
         };
-        
+
         return Ok(typeResponse);
     }
 
@@ -42,5 +42,14 @@ public class UserController : ControllerBase
         };
 
         return Created(string.Empty, response);
+    }
+
+
+    [HttpPut]
+    [Route("{id}")] //Duas formas de alterar informações de usuario.. Ou por id na rota (menos comum), ou por token de autenticação (usuario logado)
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public IActionResult Update([FromRoute] int id, [FromBody] RequestUpdateUserProfileJson request)
+    {
+        return NoContent();
     }
 }

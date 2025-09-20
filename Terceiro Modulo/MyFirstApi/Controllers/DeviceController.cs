@@ -20,6 +20,8 @@ public class DeviceController : MyFirstApiBaseController
         // Puxa do controller base essa variavel Author
         // Author = "Melissa";
 
-        return Ok(Author);
+        var key = GetCustomKey();
+
+        return Ok(key);
     }
 }
